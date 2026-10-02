@@ -8,7 +8,7 @@ small local server. Use it from a browser on the same machine, or from any devic
 Your code never leaves the machine.
 
 **Install:** see [INSTALL.md](INSTALL.md). For Linux/macOS: `./install.sh --deps && ./run.sh`. For Windows: `install.ps1`. Docker works anywhere.
-**Start:** open http://localhost:8765, then choose **Project ▸ New Project…** and pick a folder or a git URL.
+**Start:** open http://localhost:2727, then choose **Project ▸ New Project…** and pick a folder or a git URL.
 
 ## The layout
 | Panel | What it does |

@@ -47,7 +47,7 @@ cat data/token                                     # access token for other devi
 ```
 
 ## First use
-1. Open **http://localhost:8765**.
+1. Open **http://localhost:2727**.
 2. Choose **Project ▸ New Project…**. Enter a folder path on the server machine, or a git URL to clone into the workspace.
 3. SourceWeb builds the symbol database and keeps it in sync as files change. You don't need to do anything else.
 
@@ -56,10 +56,10 @@ appears as a project when SourceWeb starts.
 
 ## Opening it from other devices (phone, tablet, another computer)
 
-The server prints a link like `http://<this-machine-ip>:8765/?token=XXXX`. The token is also in `data/token`.
+The server prints a link like `http://<this-machine-ip>:2727/?token=XXXX`. The token is also in `data/token`.
 
 - **The token:** it works like a password. Opening the link once logs that browser in for 30 days.
-- **Reachability:** the other device must be able to reach this machine on port 8765. That means the same network, a VPN, or an allowed firewall rule.
+- **Reachability:** the other device must be able to reach this machine on port 2727. That means the same network, a VPN, or an allowed firewall rule.
 - **This machine only:** set `SW_HOST=127.0.0.1`.
 - **Read-only:** `SW_READONLY=1` disables saving, rename and replace.
 
@@ -73,7 +73,7 @@ Help ▸ SourceWeb Help opens this guide locally, and F1 lists every command wit
 |---|---|---|
 | `SW_WORKSPACE` | `~/SourceWeb/projects` | Folder whose sub-folders are projects |
 | `SW_DATA` | `./data` | Symbol index, workspaces/layouts, access token |
-| `SW_PORT` / `SW_HOST` | `8765` / `0.0.0.0` | Where the server listens |
+| `SW_PORT` / `SW_HOST` | `2727` / `0.0.0.0` | Where the server listens |
 | `SW_TOKEN` | random (saved in `data/token`) | Fixed access token |
 | `SW_READONLY` | off | `1` = browse only |
 

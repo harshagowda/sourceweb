@@ -558,7 +558,7 @@ app.mount("/", StaticFiles(directory=WEB, html=True), name="web")
 
 def main():
     host = os.environ.get("SW_HOST", "0.0.0.0")
-    port = int(os.environ.get("SW_PORT", "8765"))
+    port = int(os.environ.get("SW_PORT", "2727"))
     print(f"SourceWeb on http://{host}:{port}  workspace={WORKSPACE}")
     print(f"Remote access: http://<this-machine-ip>:{port}/?token={TOKEN}")
     uvicorn.run(app, host=host, port=port, log_level="warning")

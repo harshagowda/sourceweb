@@ -1,8 +1,8 @@
-# docker compose up -d   →  http://localhost:8765  (token: docker compose logs | grep token, or ./data/token)
+# docker compose up -d   →  http://localhost:2727  (token: docker compose logs | grep token, or ./data/token)
 services:
   sourceweb:
     build: .
-    ports: ["8765:8765"]
+    ports: ["2727:2727"]
     volumes:
       - ${SOURCEWEB_PROJECTS:-~/SourceWeb/projects}:/projects   # each sub-folder is a project
       - ./data:/data                                              # symbol index, settings, access token

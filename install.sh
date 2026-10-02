@@ -88,4 +88,4 @@ UNIT
   fi
 fi
 
-say "Done. Start it with ./run.sh (or it is already running if you used --service), then open http://localhost:8765"
+say "Done. Start it with ./run.sh (or it is already running if you used --service), then open http://localhost:2727"

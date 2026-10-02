@@ -20,4 +20,4 @@ Invoke-Expression "$py -m venv .venv"
 & .\.venv\Scripts\python.exe -m pip install -q -r requirements.txt
 if (Get-Command npm -ErrorAction SilentlyContinue) { Push-Location web\vendor; npm install -q --no-audit --no-fund prettier@3 | Out-Null; Pop-Location }
 New-Item -ItemType Directory -Force -Path "$HOME\SourceWeb\projects" | Out-Null
-Say "Done. Start with run.ps1 and open http://localhost:8765"
+Say "Done. Start with run.ps1 and open http://localhost:2727"
