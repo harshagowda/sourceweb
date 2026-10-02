@@ -356,7 +356,10 @@ def categories(project: str):
             "ORDER BY kind, name COLLATE NOCASE", (project,)
         ).fetchall()
     cats: dict[str, list] = {}
+    from .indexer import ANON_RE
     for kind, name, path, line, end, scope in rows:
+        if ANON_RE.match(name):
+            continue
         cats.setdefault(kind, []).append({"name": name, "path": path, "line": line, "end": end, "scope": scope, "kind": kind})
     out = [{"kind": k, "count": len(v), "items": v[:3000]} for k, v in cats.items()]
     out.sort(key=lambda c: -c["count"])

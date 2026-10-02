@@ -483,8 +483,11 @@ function initSearchBar() {
     if (e.key !== "Enter" || !bar.value) return;
     const o = store.get("lastSearch", { regex: false, case: false, word: false, glob: "", all: false });
     try {
-      const r = await api(`/api/search?${q({ q: bar.value, project: o.all ? undefined : S.project, regex: o.regex, case: o.case, word: o.word, glob: o.glob })}`);
-      showResults(`Search "${bar.value}"`, r.hits, { truncated: r.truncated });
+      const run = (project) => api(`/api/search?${q({ q: bar.value, project, regex: o.regex, case: o.case, word: o.word, glob: o.glob })}`);
+      const project = o.all ? undefined : S.project;
+      let r = await run(project), title = `Search "${bar.value}"`;
+      if (!r.hits.length && project) { r = await run(undefined); title += r.hits.length ? ` — not in ${project}; found in other projects` : ` — no matches in any project`; }
+      showResults(title, r.hits, { truncated: r.truncated });
     } catch (err) { toast(err.message); }
   };
 }

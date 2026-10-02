@@ -61,6 +61,68 @@ def is_indexable(path: Path) -> bool:
         return False
 
 
+
+# ctags names anonymous JS functions/objects like "anonymousFunction0203e6081f00": hide them from lists
+ANON_RE = re.compile(r"^anonymous(Function|Object|Class)[0-9a-f]+$")
+BRACE_LANGS = {"JavaScript", "TypeScript", "Go", "Java", "C", "C++", "C#", "Kotlin", "Rust", "Swift", "PHP", "Scala", "Dart", "Terraform", "TypeScriptReact"}
+NEEDS_END = CONTAINER_KINDS | {"function", "method", "class"}
+
+
+def _brace_end(lines: list[str], start: int) -> int:
+    """1-based end line of the block that opens at or after `start` (1-based), by matching braces.
+    Skips strings, template literals and comments well enough for navigation purposes."""
+    depth, opened, quote, block_comment = 0, False, None, False
+    for i in range(start - 1, min(len(lines), start - 1 + 20000)):
+        line = lines[i]
+        j = 0
+        while j < len(line):
+            ch = line[j]
+            nxt = line[j + 1] if j + 1 < len(line) else ""
+            if block_comment:
+                if ch == "*" and nxt == "/":
+                    block_comment = False
+                    j += 1
+            elif quote:
+                if ch == "\\":
+                    j += 1
+                elif ch == quote:
+                    quote = None
+            elif ch == "/" and nxt == "/":
+                break
+            elif ch == "/" and nxt == "*":
+                block_comment = True
+                j += 1
+            elif ch in "\"'`":
+                quote = ch
+            elif ch == "{":
+                depth += 1
+                opened = True
+            elif ch == "}":
+                depth -= 1
+                if opened and depth <= 0:
+                    return i + 1
+            j += 1
+        if quote in ("'", '"'):
+            quote = None  # ordinary strings end at the line break
+        if not opened and i - (start - 1) > 3:
+            return start  # no block follows the declaration (e.g. a one-line arrow/expression)
+    return start
+
+
+def fill_missing_ends(root: Path, tags: list[dict]) -> None:
+    """ctags leaves `end` out for many JS/TS/Go symbols; compute it so call trees and previews see the body."""
+    by_path: dict[str, list[dict]] = {}
+    for t in tags:
+        if t.get("language") in BRACE_LANGS and t.get("kind") in NEEDS_END and not (t.get("end") and t["end"] > t.get("line", 0)):
+            by_path.setdefault(t["path"], []).append(t)
+    for path, ts in by_path.items():
+        try:
+            lines = (root / path).read_text(errors="replace").splitlines()
+        except OSError:
+            continue
+        for t in ts:
+            t["end"] = _brace_end(lines, t.get("line", 1))
+
 @dataclass
 class Project:
     name: str
@@ -234,6 +296,7 @@ class Index:
             return p
         idx_files = [f for f in files if is_indexable(p.root / f)]
         tags = self._ctags(p.root, idx_files)
+        fill_missing_ends(p.root, tags)
         with self.lock:
             self.db.execute("DELETE FROM symbols WHERE project=?", (project,))
             self.db.executemany("INSERT INTO symbols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", self._rows(project, tags))
@@ -256,6 +319,7 @@ class Index:
     def reindex_file(self, project: str, rel: str) -> None:
         p = self.project(project)
         tags = self._ctags(p.root, [rel]) if is_indexable(p.root / rel) else []
+        fill_missing_ends(p.root, tags)
         with self.lock:
             self.db.execute("DELETE FROM symbols WHERE project=? AND path=?", (project, rel))
             self.db.executemany("INSERT INTO symbols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", self._rows(project, tags))
@@ -324,7 +388,7 @@ class Index:
                     results.append(d)
                     if len(results) >= limit:
                         break
-        return results[:limit]
+        return [r for r in results if not ANON_RE.match(r["name"])][:limit]
 
     def definitions(self, project: str, name: str, from_path: str | None = None) -> list[dict]:
         with self.lock:

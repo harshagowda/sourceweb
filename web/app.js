@@ -472,7 +472,7 @@ async function loadFileSymbols() {
   try { S.symbols = await api(`/api/projects/${encodeURIComponent(t.project)}/symbols?${q({ path: t.path })}`); }
   catch { S.symbols = []; }
   // drop locals/params from the outline, like SourceWeb's default symbol window filter
-  S.symbols = S.symbols.filter((s) => !["local", "parameter"].includes(s.kind));
+  S.symbols = S.symbols.filter((s) => !["local", "parameter"].includes(s.kind) && !/^anonymous(Function|Object|Class)[0-9a-f]+$/.test(s.name));
   renderSymbols();
   scheduleDecorate();
 }

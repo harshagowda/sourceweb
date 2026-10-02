@@ -101,7 +101,7 @@ function renderGraph(host, root, mode, { big = false } = {}) {
         return `<g class="g-node ${o.root ? "root" : ""}" data-i="${i}" transform="translate(${o.x},${o.y})">
           <rect width="${G.W}" height="${G.H}" rx="${{ rounded: 5, square: 0, pill: G.H / 2 }[S.graphStyle.shape] ?? 5}" fill="${color(KIND_FILL(n.kind))}" ${S.graphStyle.shadow ? `filter="url(#g-sh${big ? "B" : ""})"` : ""}/>
           <rect width="5" height="${G.H}" rx="2" fill="${color(KIND_FILL(n.kind) + "-strong")}"/>
-          <text x="12" y="15" class="g-name">${esc(String(n.label || n.name || "").replace(/^[←→▲▼] /, "").slice(0, 27))}</text>
+          <text x="12" y="15" class="g-name">${esc(String(n.label || n.name || "").replace(/^[←→▲▼] /, "").replace(/^anonymous(Function|Object|Class)[0-9a-f]+$/, "ƒ (anonymous)").slice(0, 27))}</text>
           <text x="12" y="30" class="g-sub">${esc(sub.slice(0, 34))}</text>
           ${expandable ? `<g class="g-tog" data-t="${i}" transform="translate(${kx - o.x},${G.H / 2})"><circle r="7"/><text y="4" text-anchor="middle">${n.open ? "−" : "+"}</text></g>` : ""}
         </g>`;

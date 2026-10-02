@@ -94,9 +94,18 @@ function showMenu(items, x, y, { level = 0, target = null, onClose } = {}) {
       <span class="mcheck">${it.checked?.() ? "✓" : ""}</span><span class="mlabel">${esc(it.label)}</span><span class="key">${esc(it.submenu ? "" : key)}</span><span class="marrow">${it.submenu ? "▸" : ""}</span></div>`;
   }).join("");
   document.body.append(el);
+  // Position: never cover the menu bar or the item that opened it. Tall menus scroll instead of shifting up;
+  // a right-click menu with no room below opens upward from the pointer.
   const r = el.getBoundingClientRect();
-  el.style.left = Math.max(0, Math.min(x, innerWidth - r.width - 4)) + "px";
-  el.style.top = Math.max(0, Math.min(y, innerHeight - r.height - 4)) + "px";
+  const fromBar = level === 0 && y <= (document.querySelector("#menubar")?.getBoundingClientRect().bottom ?? 0) + 2;
+  const below = innerHeight - y - 4, above = y - 4;
+  let top = y;
+  if (r.height > below && !fromBar && above > below && level === 0) top = Math.max(4, y - r.height);
+  else el.style.maxHeight = Math.max(120, below) + "px";
+  if (level > 0 && r.height > below) { top = Math.max(4, innerHeight - r.height - 4); if (r.height > innerHeight - 8) { top = 4; el.style.maxHeight = innerHeight - 8 + "px"; } }
+  const left = x + r.width > innerWidth - 4 ? (level > 0 ? Math.max(0, x - r.width - (menuStack[level - 1]?.getBoundingClientRect().width || 0) + 4) : innerWidth - r.width - 4) : x;
+  el.style.left = Math.max(0, left) + "px";
+  el.style.top = top + "px";
   menuStack.push(el);
   el._items = items;
   el._sel = -1;

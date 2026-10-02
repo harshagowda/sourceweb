@@ -133,11 +133,14 @@ window.searchProject = function (scopeAll = false) {
     store.set("lastSearch", o);
     toast(`Searching for ${v}…`);
     try {
+      const run = (project) => (o.mode === "keyword"
+        ? api(`/api/ksearch?${q({ q: v, project, context: o.context, fragments: o.fragments, glob: o.glob })}`)
+        : api(`/api/search?${q({ q: v, project, regex: o.regex, case: o.case, word: o.word, glob: o.glob })}`));
       const project = o.all ? undefined : (t?.project || S.project);
-      const r = o.mode === "keyword"
-        ? await api(`/api/ksearch?${q({ q: v, project, context: o.context, fragments: o.fragments, glob: o.glob })}`)
-        : await api(`/api/search?${q({ q: v, project, regex: o.regex, case: o.case, word: o.word, glob: o.glob })}`);
-      showResults(`Search "${v}"`, r.hits, { truncated: r.truncated });
+      let r = await run(project), title = `Search "${v}"`;
+      // nothing in this project: widen to every project instead of showing an empty result
+      if (!r.hits.length && project) { r = await run(undefined); title += r.hits.length ? ` — not in ${project}; found in other projects` : ` — no matches in any project`; }
+      showResults(title, r.hits, { truncated: r.truncated });
     } catch (e) { toast(`Search failed: ${e.message}`); }
   };
 };

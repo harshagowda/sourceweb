@@ -10,6 +10,27 @@ Your code never leaves the machine.
 **Install:** see [INSTALL.md](INSTALL.md). For Linux/macOS: `./install.sh --deps && ./run.sh`. For Windows: `install.ps1`. Docker works anywhere.
 **Start:** open http://localhost:2727, then choose **Project ▸ New Project…** and pick a folder or a git URL.
 
+## Tour: browsing three.js
+
+These screenshots show SourceWeb browsing [three.js](https://github.com/mrdoob/three.js) (MIT licence), a well-known
+open-source 3D engine. On that codebase SourceWeb indexes **37,602 symbols in 1,463 files** in seconds, finds the
+**19 direct subclasses of `Object3D`**, and traces **51 callers of `updateMatrixWorld`**.
+
+| | |
+|---|---|
+| ![Overview: symbol window, editor, context window and class-inheritance graph](docs/screenshots/overview.png) | ![Call graph: callers on the left, callees on the right](docs/screenshots/call-graph.png) |
+| **Overview.** `Object3D` with its outline, and its class tree in the Relation window. | **Call graph.** Who calls `updateMatrixWorld` (left) and what it calls (right). |
+| ![Lookup references with the enclosing function per hit](docs/screenshots/references.png) | ![Symbol categories: classes expand to their members](docs/screenshots/categories.png) |
+| **Lookup References.** 84 references, grouped by file. | **Symbol Categories.** `Vector3` expanded to its methods. |
+| ![Right-click menu in the editor](docs/screenshots/context-menu.png) | ![Dark theme with Browse Project Symbols](docs/screenshots/dark-browse-symbols.png) |
+| **Right-click menu.** Jump to definition or caller, references, rename. | **Dark theme.** Browse Project Symbols (F7). |
+
+On a phone, the panels slide in from the sides:
+
+<img src="docs/screenshots/mobile.png" width="260" alt="SourceWeb on a phone">
+
+The screenshots are regenerated with `tools/make_screenshots.py`, which only runs against a server that serves nothing but the three.js demo.
+
 ## The layout
 | Panel | What it does |
 |---|---|

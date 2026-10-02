@@ -288,3 +288,5 @@ body.recording #statusbar::after { content: "● REC"; font-weight: 700; }
 /* scaled nested brackets (Syntax Decorations) */
 .sw-paren-0 { font-size: 125%; font-weight: 700; }
 .sw-paren-1 { font-size: 112%; }
+.g-tools .mini { white-space: nowrap; flex: none; }
+.g-tools { flex-wrap: nowrap; overflow: hidden; }
