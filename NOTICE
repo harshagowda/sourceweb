@@ -1,0 +1,22 @@
+SourceWeb
+Copyright 2026 The SourceWeb authors
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+SourceWeb (Sw) is an independent open-source project and is not affiliated with any commercial
+code-editor vendor.
+
+Third-party components
+----------------------
+Bundled in this distribution:
+  * Monaco Editor (web/vendor/monaco) — MIT License, Copyright (c) Microsoft Corporation.
+    See web/vendor/monaco/LICENSE.monaco
+  * JetBrains Mono font (web/vendor/fonts) — SIL Open Font License 1.1,
+    Copyright 2020 The JetBrains Mono Project Authors. See web/vendor/fonts/LICENSE.jetbrains-mono
+
+Installed by the installers / Docker image (not bundled in the source zip):
+  * FastAPI (MIT), Uvicorn (BSD-3-Clause), Jedi (MIT), Ruff (MIT)       — Python packages
+  * Prettier (MIT)                                                        — optional, via npm
+  * ripgrep (MIT / Unlicense), Git (GPL-2.0)                              — external programs
+  * Universal Ctags (GPL-2.0)                                             — external program, invoked as a
+    separate process. Its source code is available at https://github.com/universal-ctags/ctags.
+    The Docker image installs the Debian package; Debian provides the corresponding source.

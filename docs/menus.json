@@ -1,0 +1,1997 @@
+{
+ "about": "Menu bar and context-menu layout used by SourceWeb (Sw).",
+ "menubar": [
+  {
+   "menu": "File",
+   "items": [
+    {
+     "label": "New...",
+     "command": "New"
+    },
+    {
+     "label": "Open...",
+     "command": "Open",
+     "key": "Ctrl+O"
+    },
+    {
+     "label": "Open As Encoding...",
+     "command": "Open As Encoding"
+    },
+    {
+     "label": "Browse Files...",
+     "command": "Browse Files"
+    },
+    {
+     "label": "Load File...",
+     "command": "Load File"
+    },
+    {
+     "label": "Reload As Encoding...",
+     "command": "Reload As Encoding"
+    },
+    {
+     "label": "Reload File",
+     "command": "Reload File"
+    },
+    {
+     "label": "Reload Modified Files",
+     "command": "Reload Modified Files"
+    },
+    {
+     "label": "Next File",
+     "command": "Next File"
+    },
+    {
+     "label": "Close",
+     "command": "Close"
+    },
+    {
+     "label": "Close All",
+     "command": "Close All"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Save",
+     "command": "Save",
+     "key": "Ctrl+S"
+    },
+    {
+     "label": "Save As...",
+     "command": "Save As"
+    },
+    {
+     "label": "Save As Encoding...",
+     "command": "Save As Encoding"
+    },
+    {
+     "label": "Save A Copy...",
+     "command": "Save A Copy"
+    },
+    {
+     "label": "Save All",
+     "command": "Save All"
+    },
+    {
+     "label": "Save All Quietly",
+     "command": "Save All Quietly"
+    },
+    {
+     "label": "Save Selection...",
+     "command": "Save Selection"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "New Clip",
+     "command": "New Clip"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Open Backup File...",
+     "command": "Open Backup File"
+    },
+    {
+     "label": "Save New Backup File",
+     "command": "Save New Backup File"
+    },
+    {
+     "label": "Restore File",
+     "command": "Restore File"
+    },
+    {
+     "label": "Checkpoint",
+     "command": "Checkpoint"
+    },
+    {
+     "label": "Checkpoint All",
+     "command": "Checkpoint All"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Rename...",
+     "command": "Rename"
+    },
+    {
+     "label": "Delete File...",
+     "command": "Delete File"
+    },
+    {
+     "label": "Copy File Path",
+     "command": "Copy File Path"
+    },
+    {
+     "label": "Show File Status",
+     "command": "Show File Status"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Load Workspace...",
+     "command": "Load Workspace"
+    },
+    {
+     "label": "Save Workspace...",
+     "command": "Save Workspace"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Export File as HTML...",
+     "command": "Export File as HTML"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Print...",
+     "command": "Print"
+    },
+    {
+     "label": "Page Setup...",
+     "command": "Page Setup"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Recent files list"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Exit",
+     "command": "Exit"
+    },
+    {
+     "label": "Exit and Suspend",
+     "command": "Exit and Suspend"
+    }
+   ]
+  },
+  {
+   "menu": "Edit",
+   "items": [
+    {
+     "label": "Undo",
+     "command": "Undo",
+     "key": "Ctrl+Z"
+    },
+    {
+     "label": "Redo",
+     "command": "Redo",
+     "key": "Ctrl+Shift+Z"
+    },
+    {
+     "label": "Undo All",
+     "command": "Undo All"
+    },
+    {
+     "label": "Redo All",
+     "command": "Redo All"
+    },
+    {
+     "label": "Repeat Typing",
+     "command": "Repeat Typing"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Cut",
+     "command": "Cut"
+    },
+    {
+     "label": "Copy",
+     "command": "Copy"
+    },
+    {
+     "label": "Paste",
+     "command": "Paste"
+    },
+    {
+     "label": "Delete",
+     "command": "Delete"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Cut Line",
+     "command": "Cut Line"
+    },
+    {
+     "label": "Copy Line",
+     "command": "Copy Line"
+    },
+    {
+     "label": "Paste Line",
+     "command": "Paste Line"
+    },
+    {
+     "label": "Duplicate",
+     "command": "Duplicate"
+    },
+    {
+     "label": "Cut Word",
+     "command": "Cut Word"
+    },
+    {
+     "label": "Cut Selection or Paste",
+     "command": "Cut Selection or Paste"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Copy To Clip",
+     "command": "Copy To Clip",
+     "key": "Ctrl+Shift+Del"
+    },
+    {
+     "label": "Cut To Clip",
+     "command": "Cut To Clip",
+     "key": "Ctrl+Shift+X"
+    },
+    {
+     "label": "Paste From Clip",
+     "command": "Paste From Clip"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Select All",
+     "command": "Select All",
+     "key": "Ctrl+A"
+    },
+    {
+     "label": "Select Line",
+     "command": "Select Line",
+     "key": "Shift+F6"
+    },
+    {
+     "label": "Select Word",
+     "command": "Select Word"
+    },
+    {
+     "label": "Select Block",
+     "command": "Select Block",
+     "key": "Ctrl+-"
+    },
+    {
+     "label": "Select Function or Symbol",
+     "command": "Select Function or Symbol"
+    },
+    {
+     "label": "Select Symbol",
+     "command": "Select Symbol"
+    },
+    {
+     "label": "Select Match",
+     "command": "Select Match",
+     "key": "Alt+="
+    },
+    {
+     "label": "Select Sentence",
+     "command": "Select Sentence",
+     "key": "Shift+F7, Ctrl+."
+    },
+    {
+     "label": "Toggle Extend Mode",
+     "command": "Toggle Extend Mode"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Snippet",
+     "submenu": [
+      {
+       "label": "<snippet names>"
+      }
+     ]
+    },
+    {
+     "label": "Complete Symbol",
+     "command": "Complete Symbol"
+    },
+    {
+     "label": "Complete Snippet",
+     "command": "Complete Snippet",
+     "key": "Ctrl+E"
+    },
+    {
+     "label": "Expand Text Variables",
+     "command": "Expand Text Variables"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert File...",
+     "command": "Insert File"
+    },
+    {
+     "label": "Insert ASCII...",
+     "command": "Insert ASCII"
+    },
+    {
+     "label": "Insert GUID",
+     "command": "Insert GUID"
+    },
+    {
+     "label": "Insert Line",
+     "command": "Insert Line"
+    },
+    {
+     "label": "Insert Line Before Next",
+     "command": "Insert Line Before Next"
+    },
+    {
+     "label": "Join Lines",
+     "command": "Join Lines"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Indent Left",
+     "command": "Indent Left"
+    },
+    {
+     "label": "Indent Right",
+     "command": "Indent Right"
+    },
+    {
+     "label": "Tabs to Spaces",
+     "command": "Tabs to Spaces"
+    },
+    {
+     "label": "Reform Paragraph",
+     "command": "Reform Paragraph"
+    },
+    {
+     "label": "Renumber...",
+     "command": "Renumber"
+    },
+    {
+     "label": "Calculate",
+     "command": "Calculate"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Toggle Insert Mode",
+     "command": "Toggle Insert Mode"
+    },
+    {
+     "label": "Browser Mode",
+     "command": "Browser Mode"
+    }
+   ]
+  },
+  {
+   "menu": "Search",
+   "items": [
+    {
+     "label": "Search...",
+     "command": "Search",
+     "key": "Ctrl+F"
+    },
+    {
+     "label": "Search Forward",
+     "command": "Search Forward",
+     "key": "F4"
+    },
+    {
+     "label": "Search Backward",
+     "command": "Search Backward",
+     "key": "F3"
+    },
+    {
+     "label": "Search Forward for Selection",
+     "command": "Search Forward for Selection",
+     "key": "Shift+F4"
+    },
+    {
+     "label": "Search Backward for Selection",
+     "command": "Search Backward for Selection"
+    },
+    {
+     "label": "Incremental Search",
+     "command": "Incremental Search",
+     "key": "F12"
+    },
+    {
+     "label": "Incremental Search Backward",
+     "command": "Incremental Search Backward",
+     "key": "Shift+F12"
+    },
+    {
+     "label": "Load Search String",
+     "command": "Load Search String"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Replace...",
+     "command": "Replace"
+    },
+    {
+     "label": "Search Files...",
+     "command": "Search Files"
+    },
+    {
+     "label": "Replace Files...",
+     "command": "Replace Files"
+    },
+    {
+     "label": "Search Project...",
+     "command": "Search Project"
+    },
+    {
+     "label": "Lookup References...",
+     "command": "Lookup References"
+    },
+    {
+     "label": "Smart Rename...",
+     "command": "Smart Rename",
+     "key": "Ctrl+'"
+    },
+    {
+     "label": "Search Web",
+     "command": "Search Web",
+     "key": "Ctrl+Alt+W"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Jump To Definition",
+     "command": "Jump To Definition",
+     "key": "Alt+="
+    },
+    {
+     "label": "Jump To Caller",
+     "command": "Jump To Caller"
+    },
+    {
+     "label": "Jump To Base Type",
+     "command": "Jump To Base Type"
+    },
+    {
+     "label": "Jump To Prototype",
+     "command": "Jump To Prototype"
+    },
+    {
+     "label": "Symbol Info",
+     "command": "Symbol Info"
+    },
+    {
+     "label": "Browse Project Symbols",
+     "command": "Browse Project Symbols",
+     "key": "F7"
+    },
+    {
+     "label": "Browse Local File Symbols",
+     "command": "Browse Local File Symbols"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Go Back",
+     "command": "Go Back",
+     "key": "Alt+,"
+    },
+    {
+     "label": "Go Forward",
+     "command": "Go Forward",
+     "key": "Alt+."
+    },
+    {
+     "label": "Go Back Toggle",
+     "command": "Go Back Toggle"
+    },
+    {
+     "label": "Selection History",
+     "command": "Selection History",
+     "key": "Ctrl+Shift+M"
+    },
+    {
+     "label": "Go To Line",
+     "command": "Go To Line",
+     "key": "F5, Ctrl+G"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Go To Next Change",
+     "command": "Go To Next Change"
+    },
+    {
+     "label": "Go To Previous Change",
+     "command": "Go To Previous Change"
+    },
+    {
+     "label": "Go To Next Reference Highlight",
+     "command": "Go To Next Reference Highlight"
+    },
+    {
+     "label": "Go To Previous Reference Highlight",
+     "command": "Go To Previous Reference Highlight"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Jump To Link",
+     "command": "Jump To Link",
+     "key": "Ctrl+L"
+    },
+    {
+     "label": "Go To First Link",
+     "command": "Go To First Link",
+     "key": "Ctrl+Shift+L"
+    },
+    {
+     "label": "Go To Next Link",
+     "command": "Go To Next Link",
+     "key": "Shift+F9"
+    },
+    {
+     "label": "Go To Previous Link",
+     "command": "Go To Previous Link",
+     "key": "Shift+F8"
+    },
+    {
+     "label": "Parse Source Links...",
+     "command": "Parse Source Links"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Bookmark...",
+     "command": "Bookmark",
+     "key": "Ctrl+M"
+    },
+    {
+     "label": "Highlight Word",
+     "command": "Highlight Word"
+    },
+    {
+     "label": "Clear Highlights",
+     "command": "Clear Highlights"
+    }
+   ]
+  },
+  {
+   "menu": "Project",
+   "items": [
+    {
+     "label": "New Project...",
+     "command": "New Project"
+    },
+    {
+     "label": "Open Project...",
+     "command": "Open Project"
+    },
+    {
+     "label": "Close Project",
+     "command": "Close Project"
+    },
+    {
+     "label": "Remove Project...",
+     "command": "Remove Project"
+    },
+    {
+     "label": "Copy Project...",
+     "command": "Copy Project"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Add and Remove Project Files...",
+     "command": "Add and Remove Project Files"
+    },
+    {
+     "label": "Add File...",
+     "command": "Add File"
+    },
+    {
+     "label": "Add File List...",
+     "command": "Add File List"
+    },
+    {
+     "label": "Remove File...",
+     "command": "Remove File"
+    },
+    {
+     "label": "Synchronize Files...",
+     "command": "Synchronize Files"
+    },
+    {
+     "label": "Rebuild Project...",
+     "command": "Rebuild Project"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Import External Symbols...",
+     "command": "Import External Symbols"
+    },
+    {
+     "label": "Import External Symbols for Current Project...",
+     "command": "Import External Symbols for Current Project"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Open Project Master File List",
+     "command": "Open Project Master File List"
+    },
+    {
+     "label": "Project Settings...",
+     "command": "Project Settings"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Project Report...",
+     "command": "Project Report"
+    },
+    {
+     "label": "Export Project File List...",
+     "command": "Export Project File List"
+    },
+    {
+     "label": "Export Project To HTML...",
+     "command": "Export Project To HTML"
+    }
+   ]
+  },
+  {
+   "menu": "Options",
+   "items": [
+    {
+     "label": "Preferences...",
+     "command": "Preferences"
+    },
+    {
+     "label": "File Type Options...",
+     "command": "File Type Options"
+    },
+    {
+     "label": "Style Properties...",
+     "command": "Style Properties"
+    },
+    {
+     "label": "Visual Theme",
+     "submenu": [
+      {
+       "label": "<theme names>"
+      },
+      {
+       "separator": true
+      },
+      {
+       "label": "Manage Visual Themes...",
+       "command": "Manage Visual Themes"
+      }
+     ]
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Key Assignments...",
+     "command": "Key Assignments"
+    },
+    {
+     "label": "Menu Assignments...",
+     "command": "Menu Assignments"
+    },
+    {
+     "label": "Custom Commands...",
+     "command": "Custom Commands"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Load Configuration...",
+     "command": "Load Configuration"
+    },
+    {
+     "label": "Save Configuration...",
+     "command": "Save Configuration"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Bookmark Options...",
+     "command": "Bookmark Options"
+    },
+    {
+     "label": "Search Engines...",
+     "command": "Search Engines"
+    },
+    {
+     "label": "Enable Event Handlers",
+     "command": "Enable Event Handlers"
+    },
+    {
+     "label": "Advanced Options...",
+     "command": "Advanced Options"
+    }
+   ]
+  },
+  {
+   "menu": "View",
+   "items": [
+    {
+     "label": "Panels",
+     "submenu": [
+      {
+       "label": "Project Window",
+       "command": "Project Window command"
+      },
+      {
+       "label": "Project Symbol List",
+       "command": "Project Symbol List"
+      },
+      {
+       "label": "Project File List",
+       "command": "Project File List"
+      },
+      {
+       "label": "Project Folder Browser",
+       "command": "Project Folder Browser"
+      },
+      {
+       "label": "Project Symbol Categories",
+       "command": "Project Symbol Categories"
+      },
+      {
+       "label": "Project File Types",
+       "command": "Project File Types"
+      },
+      {
+       "separator": true
+      },
+      {
+       "label": "Context Window",
+       "command": "Context Window"
+      },
+      {
+       "label": "Relation Window",
+       "command": "Relation Window"
+      },
+      {
+       "label": "Clip Window",
+       "command": "Clip Window"
+      },
+      {
+       "label": "Bookmark Window",
+       "command": "Bookmark Window"
+      },
+      {
+       "label": "Snippet Window",
+       "command": "Snippet Window"
+      },
+      {
+       "label": "Window List",
+       "command": "Window List"
+      },
+      {
+       "separator": true
+      },
+      {
+       "label": "File Compare",
+       "command": "File Compare"
+      },
+      {
+       "label": "Directory Compare",
+       "command": "Directory Compare"
+      }
+     ]
+    },
+    {
+     "label": "Toolbars",
+     "submenu": [
+      {
+       "label": "Main Toolbar",
+       "command": "Main Toolbar"
+      },
+      {
+       "separator": true
+      },
+      {
+       "label": "Standard Toolbar",
+       "command": "Standard Toolbar"
+      },
+      {
+       "label": "Browse Toolbar",
+       "command": "Browse Toolbar"
+      },
+      {
+       "label": "View Toolbar",
+       "command": "View Toolbar"
+      },
+      {
+       "label": "Arrangement Toolbar",
+       "command": "Arrangement Toolbar"
+      },
+      {
+       "label": "Layout Toolbar",
+       "command": "Layout Toolbar"
+      },
+      {
+       "label": "Outline Toolbar",
+       "command": "Outline Toolbar"
+      },
+      {
+       "label": "Source Control Toolbar",
+       "command": "Source Control Toolbar"
+      }
+     ]
+    },
+    {
+     "label": "Project Search Bar",
+     "command": "Project Search Bar"
+    },
+    {
+     "label": "File Search Bar",
+     "command": "File Search Bar"
+    },
+    {
+     "label": "Window Tabs",
+     "command": "Window Tabs"
+    },
+    {
+     "label": "Tab Tray",
+     "command": "Tab Tray"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Full Screen",
+     "command": "Full Screen (F11)",
+     "key": "F11"
+    },
+    {
+     "label": "Mono Font View",
+     "command": "Mono Font View"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Symbol Window",
+     "command": "Symbol Window command"
+    },
+    {
+     "label": "Overview",
+     "command": "Overview"
+    },
+    {
+     "label": "Line Numbers",
+     "command": "Line Numbers"
+    },
+    {
+     "label": "Visible Tabs",
+     "command": "Visible Tabs"
+    },
+    {
+     "label": "Visible Tabs and Spaces",
+     "command": "Visible Tabs and Spaces"
+    },
+    {
+     "label": "Vertical Scroll Bar",
+     "command": "Vertical Scroll Bar"
+    },
+    {
+     "label": "Horizontal Scroll Bar",
+     "command": "Horizontal Scroll Bar"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Expand All",
+     "command": "Expand All"
+    },
+    {
+     "label": "Expand",
+     "command": "Expand"
+    },
+    {
+     "label": "Collapse",
+     "command": "Collapse"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Load Layout...",
+     "command": "Load Layout"
+    },
+    {
+     "label": "Save Layout...",
+     "command": "Save Layout"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Show Clipboard",
+     "command": "Show Clipboard"
+    },
+    {
+     "label": "Redraw Screen",
+     "command": "Redraw Screen"
+    }
+   ]
+  },
+  {
+   "menu": "Tools",
+   "items": [
+    {
+     "label": "Compare Files...",
+     "command": "Compare Files"
+    },
+    {
+     "label": "Compare with Backup File...",
+     "command": "Compare with Backup File"
+    },
+    {
+     "label": "Directory Compare",
+     "command": "Directory Compare"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Reformat Source Code with <preset> Preset",
+     "command": "Reformat Source Code with <preset> Preset"
+    },
+    {
+     "label": "Reformat Source Code Options...",
+     "command": "Reformat Source Code Options"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Custom Commands...",
+     "command": "Custom Commands"
+    },
+    {
+     "label": "Command Shell",
+     "command": "Command Shell"
+    },
+    {
+     "label": "Check In",
+     "command": "Check In"
+    },
+    {
+     "label": "Check Out",
+     "command": "Check Out"
+    },
+    {
+     "label": "Undo Check Out",
+     "command": "Undo Check Out"
+    },
+    {
+     "label": "Sync to Source Control Project",
+     "command": "Sync to Source Control Project"
+    },
+    {
+     "label": "Sync File to Source Control Project",
+     "command": "Sync File to Source Control Project"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Activate Snippet Window",
+     "command": "Activate Snippet Window",
+     "key": "Ctrl+Alt+S"
+    },
+    {
+     "label": "Generate Call Tree",
+     "command": "Generate Call Tree"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Start Recording",
+     "command": "Start Recording"
+    },
+    {
+     "label": "Stop Recording",
+     "command": "Stop Recording"
+    },
+    {
+     "label": "Play Recording",
+     "command": "Play Recording"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Create Key List",
+     "command": "Create Key List"
+    },
+    {
+     "label": "Create Command List",
+     "command": "Create Command List"
+    }
+   ]
+  },
+  {
+   "menu": "Window",
+   "items": [
+    {
+     "label": "Close Window",
+     "command": "Close Window"
+    },
+    {
+     "label": "Close All",
+     "command": "Close All"
+    },
+    {
+     "label": "New Window",
+     "command": "New Window"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Cascade Windows",
+     "command": "Cascade Windows"
+    },
+    {
+     "label": "Tile Horizontal",
+     "command": "Tile Horizontal"
+    },
+    {
+     "label": "Tile Vertical",
+     "command": "Tile Vertical"
+    },
+    {
+     "label": "Tile One Window",
+     "command": "Tile One Window"
+    },
+    {
+     "label": "Tile Two Windows",
+     "command": "Tile Two Windows"
+    },
+    {
+     "label": "Arrange Windows",
+     "command": "Arrange Windows"
+    },
+    {
+     "label": "Zoom Window",
+     "command": "Zoom Window"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Link Window...",
+     "command": "Link Window"
+    },
+    {
+     "label": "Link All Windows",
+     "command": "Link All Windows"
+    },
+    {
+     "label": "Sync File Windows",
+     "command": "Sync File Windows"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Select Next Window",
+     "command": "Select Next Window"
+    },
+    {
+     "label": "Last Window",
+     "command": "Last Window (Ctrl+Tab) or (Ctrl+Shift+Tab)",
+     "key": "Ctrl+Tab"
+    },
+    {
+     "label": "Pick Window...",
+     "command": "Pick Window"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Window Options...",
+     "command": "Window Options"
+    },
+    {
+     "label": "Window Tab Options...",
+     "command": "Window Tab Options"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "<open file windows list>"
+    }
+   ]
+  },
+  {
+   "menu": "Help",
+   "items": [
+    {
+     "label": "Help",
+     "command": "Help"
+    },
+    {
+     "label": "Help Mode",
+     "command": "Help Mode",
+     "key": "Ctrl+F1"
+    },
+    {
+     "label": "HTML Help",
+     "command": "HTML Help"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "About SourceWeb",
+     "command": "About SourceWeb"
+    }
+   ]
+  }
+ ],
+ "context": {
+  "editor": [
+   {
+    "label": "Cut",
+    "command": "Cut"
+   },
+   {
+    "label": "Copy",
+    "command": "Copy"
+   },
+   {
+    "label": "Paste",
+    "command": "Paste"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Jump To Definition",
+    "command": "Jump To Definition"
+   },
+   {
+    "label": "Jump To Caller",
+    "command": "Jump To Caller"
+   },
+   {
+    "label": "Lookup References",
+    "command": "Lookup References"
+   },
+   {
+    "label": "Symbol Info",
+    "command": "Symbol Info"
+   },
+   {
+    "label": "Smart Rename",
+    "command": "Smart Rename"
+   },
+   {
+    "label": "Highlight Word",
+    "command": "Highlight Word"
+   },
+   {
+    "label": "Search Web",
+    "command": "Search Web"
+   },
+   {
+    "label": "Edit Condition",
+    "command": "Edit Condition"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Symbol Window",
+    "command": "Symbol Window command"
+   },
+   {
+    "label": "Overview",
+    "command": "Overview"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "File Type Options...",
+    "command": "File Type Options"
+   },
+   {
+    "label": "Language Properties...",
+    "command": "Language Properties"
+   }
+  ],
+  "selection_bar": [
+   {
+    "label": "Bookmark...",
+    "command": "Bookmark"
+   },
+   {
+    "label": "Restore Lines",
+    "command": "Restore Lines"
+   },
+   {
+    "label": "Collapse",
+    "command": "Collapse"
+   },
+   {
+    "label": "Expand",
+    "command": "Expand"
+   },
+   {
+    "label": "Expand All",
+    "command": "Expand All"
+   },
+   {
+    "label": "Select Function or Symbol",
+    "command": "Select Function or Symbol"
+   }
+  ],
+  "symbol_window": [
+   {
+    "label": "Cut Symbol",
+    "command": "Cut Symbol"
+   },
+   {
+    "label": "Copy Symbol",
+    "command": "Copy Symbol"
+   },
+   {
+    "label": "Paste Symbol",
+    "command": "Paste Symbol"
+   },
+   {
+    "label": "Duplicate Symbol",
+    "command": "Duplicate Symbol"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Sort Symbols by Name",
+    "command": "Sort Symbols by Name"
+   },
+   {
+    "label": "Sort Symbols By Line",
+    "command": "Sort Symbols By Line"
+   },
+   {
+    "label": "Sort Symbols By Type",
+    "command": "Sort Symbols By Type"
+   },
+   {
+    "label": "Symbol Type Filter",
+    "command": "Symbol Type Filter"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Symbol Window Properties...",
+    "command": "Symbol Window Options"
+   },
+   {
+    "label": "Save Settings",
+    "command": "Save Settings"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "project_file_list": [
+   {
+    "label": "Open",
+    "command": "Open"
+   },
+   {
+    "label": "Remove File from Project",
+    "command": "Remove File"
+   },
+   {
+    "label": "Add and Remove Project Files",
+    "command": "Add and Remove Project Files"
+   },
+   {
+    "label": "Copy File Path",
+    "command": "Copy File Path"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Project File List Options...",
+    "command": "Project File List Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "project_symbol_list": [
+   {
+    "label": "Jump To Definition",
+    "command": "Jump To Definition"
+   },
+   {
+    "label": "Lookup References",
+    "command": "Lookup References"
+   },
+   {
+    "label": "Symbol Info",
+    "command": "Symbol Info"
+   },
+   {
+    "label": "Generate Call Tree",
+    "command": "Generate Call Tree"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Symbol Type Filter",
+    "command": "Symbol Type Filter"
+   },
+   {
+    "label": "Project Symbol List Options...",
+    "command": "Project Symbol List Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "folder_browser": [
+   {
+    "label": "Open",
+    "command": "Open"
+   },
+   {
+    "label": "Add File to Project",
+    "command": "Add File"
+   },
+   {
+    "label": "Remove File from Project",
+    "command": "Remove File"
+   },
+   {
+    "label": "Copy File Path",
+    "command": "Copy File Path"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Project Folder Browser Options...",
+    "command": "Project Folder Browser Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "project_symbol_categories": [
+   {
+    "label": "Jump To Definition",
+    "command": "Jump To Definition"
+   },
+   {
+    "label": "Expand Special...",
+    "command": "Expand Special"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Options...",
+    "command": "Project Symbol Category Window Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "project_file_types": [
+   {
+    "label": "Open",
+    "command": "Open"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Properties...",
+    "command": "Project File Type List Properties"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "context_window": [
+   {
+    "label": "Jump To Definition",
+    "command": "Jump To Definition"
+   },
+   {
+    "label": "Copy",
+    "command": "Copy"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Lock Context Window",
+    "command": "Lock Context Window"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Context Window Options...",
+    "command": "Context Window Options"
+   }
+  ],
+  "relation_window": [
+   {
+    "label": "Jump To Definition",
+    "command": "Jump To Definition"
+   },
+   {
+    "label": "Lookup References",
+    "command": "Lookup References"
+   },
+   {
+    "label": "Expand Special...",
+    "command": "Expand Special"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "View Relation Outline",
+    "command": "View Relation Outline"
+   },
+   {
+    "label": "View Relation Window Horizontal Graph",
+    "command": "View Relation Window Horizontal Graph"
+   },
+   {
+    "label": "View Relation Window Vertical Graph",
+    "command": "View Relation Window Vertical Graph"
+   },
+   {
+    "label": "Next Relation Window View",
+    "command": "Next Relation Window View"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Refresh Relation Window",
+    "command": "Refresh Relation Window"
+   },
+   {
+    "label": "Lock Relation Window",
+    "command": "Lock Relation Window"
+   },
+   {
+    "label": "New Relation Window",
+    "command": "New Relation Window"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Create Bookmarks from Relation Items",
+    "command": "Create Bookmarks from Relation Items"
+   },
+   {
+    "label": "Touch All Files in Relation",
+    "command": "Touch All Files in Relation"
+   },
+   {
+    "label": "Print Relation Window...",
+    "command": "Print Relation Window"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Relation Window Properties...",
+    "command": "Relation Window Options"
+   },
+   {
+    "label": "Relation Graph Properties...",
+    "command": "Relation Window Graph Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "search_results": [
+   {
+    "label": "Jump To Link",
+    "command": "Jump To Link",
+    "key": "Ctrl+L"
+   },
+   {
+    "label": "Go To Next Link",
+    "command": "Go To Next Link",
+    "key": "Shift+F9"
+   },
+   {
+    "label": "Go To Previous Link",
+    "command": "Go To Previous Link",
+    "key": "Shift+F8"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Cut",
+    "command": "Cut"
+   },
+   {
+    "label": "Copy",
+    "command": "Copy"
+   },
+   {
+    "label": "Paste",
+    "command": "Paste"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Search Results Options...",
+    "command": "Search Results Options"
+   },
+   {
+    "label": "(inherits editor context menu)"
+   }
+  ],
+  "bookmark_window": [
+   {
+    "label": "Add",
+    "command": "Bookmark",
+    "key": "Ctrl+N"
+   },
+   {
+    "label": "Delete",
+    "command": "Delete Bookmark",
+    "key": "Ctrl+X"
+   },
+   {
+    "label": "Delete All Bookmarks",
+    "command": "Delete All Bookmarks"
+   },
+   {
+    "label": "Go To",
+    "command": "Go To Bookmark",
+    "key": "Enter"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Load Bookmarks...",
+    "command": "Load Bookmarks",
+    "key": "Ctrl+O"
+   },
+   {
+    "label": "Save Bookmarks...",
+    "command": "Save Bookmarks",
+    "key": "Ctrl+S"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Bookmark Options...",
+    "command": "Bookmark Options",
+    "key": "Ctrl+Q"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "clip_window": [
+   {
+    "label": "New Clip",
+    "command": "New Clip",
+    "key": "Ctrl+N"
+   },
+   {
+    "label": "View Clip",
+    "command": "View Clip"
+   },
+   {
+    "label": "Edit Clip",
+    "command": "Edit Clip",
+    "key": "Ctrl+E"
+   },
+   {
+    "label": "Paste From Clip",
+    "command": "Paste From Clip"
+   },
+   {
+    "label": "Clip Properties...",
+    "command": "Clip Properties"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Delete Clip",
+    "command": "Delete Clip",
+    "key": "Ctrl+X"
+   },
+   {
+    "label": "Delete All Clips",
+    "command": "Delete All Clips"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Clip Window Options...",
+    "command": "Clip Window Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "snippet_window": [
+   {
+    "label": "New Snippet",
+    "command": "New Snippet",
+    "key": "Ctrl+N"
+   },
+   {
+    "label": "Edit Snippet",
+    "command": "Snippet Properties",
+    "key": "Ctrl+E"
+   },
+   {
+    "label": "Edit Snippet Text in Editor",
+    "command": "Edit Snippet Text in Editor"
+   },
+   {
+    "label": "Delete Snippet",
+    "command": "Delete Snippet",
+    "key": "Ctrl+X"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Load Snippets...",
+    "command": "Load Snippets",
+    "key": "Ctrl+O"
+   },
+   {
+    "label": "Save Snippets...",
+    "command": "Save Snippets",
+    "key": "Ctrl+S"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Snippet Window Options...",
+    "command": "Snippet Window Options",
+    "key": "Ctrl+Q"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "window_list": [
+   {
+    "label": "Activate Window",
+    "command": "Activate Window"
+   },
+   {
+    "label": "Close Window",
+    "command": "Close Window"
+   },
+   {
+    "label": "Save",
+    "command": "Save"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Window List Options...",
+    "command": "Window List Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "file_compare": [
+   {
+    "label": "Edit File",
+    "command": "Edit File",
+    "key": "Ctrl+E"
+   },
+   {
+    "label": "Search",
+    "command": "Search",
+    "key": "Ctrl+F"
+   },
+   {
+    "label": "Search Forward",
+    "command": "Search Forward"
+   },
+   {
+    "label": "Copy to Clipboard",
+    "command": "Copy to Clipboard",
+    "key": "Ctrl+C"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Mono Font View",
+    "command": "Mono Font View"
+   },
+   {
+    "label": "Overview",
+    "command": "Overview"
+   },
+   {
+    "label": "Vertical Scrollbar",
+    "command": "Vertical Scroll Bar"
+   },
+   {
+    "label": "Nesting Lines",
+    "command": "Nesting Lines"
+   },
+   {
+    "label": "Show Difference List",
+    "command": "Show Difference List"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "File Compare Window Options...",
+    "command": "File Compare Window Options",
+    "key": "Ctrl+Q"
+   }
+  ],
+  "file_compare_difference_list": [
+   {
+    "label": "Difference List",
+    "command": "Difference List"
+   }
+  ],
+  "directory_compare": [
+   {
+    "label": "Compare Selected File",
+    "command": "Compare Selected File"
+   },
+   {
+    "label": "Refresh / Rescan",
+    "command": "Refresh"
+   },
+   {
+    "label": "Previous Difference",
+    "command": "Previous Difference"
+   },
+   {
+    "label": "Next Difference",
+    "command": "Next Difference"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy File Left to Right",
+    "command": "Copy File Left to Right"
+   },
+   {
+    "label": "Copy File Right to Left",
+    "command": "Copy File Right to Left"
+   },
+   {
+    "label": "Delete Left File",
+    "command": "Delete Left File"
+   },
+   {
+    "label": "Delete Right File",
+    "command": "Delete Right File"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Directory Compare Options...",
+    "command": "Directory Compare Options"
+   },
+   {
+    "separator": true
+   },
+   {
+    "label": "Copy List",
+    "command": "Copy List"
+   },
+   {
+    "label": "Search List",
+    "command": "Search List"
+   }
+  ],
+  "window_tabs": [
+   {
+    "label": "Window Tab Options...",
+    "command": "Window Tab Options"
+   }
+  ],
+  "vertical_scroll_bar": [
+   {
+    "label": "Scroll Bar Options...",
+    "command": "Scroll Bar Options"
+   }
+  ],
+  "overview_scroller": [
+   {
+    "label": "Overview Options...",
+    "command": "Overview Options"
+   }
+  ],
+  "status_bar_browse_box": [
+   {
+    "label": "Enable/Disable Browse Mode",
+    "command": "Browser Mode"
+   }
+  ]
+ }
+}

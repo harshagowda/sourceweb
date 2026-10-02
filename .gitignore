@@ -1,0 +1,11 @@
+.venv/
+data/*
+!data/.keep
+docs-reference/
+__pycache__/
+web/vendor/node_modules/
+web/vendor/package-lock.json
+*.db
+*.sqlite
+tags
+.DS_Store

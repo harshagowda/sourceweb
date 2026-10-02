@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SourceWeb</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%233a6fd8'/><text x='3' y='12' font-size='10' font-family='monospace' fill='white'>Sw</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="menubar">
+    <div class="brand" title="SourceWeb"><span class="logo">Sw</span><span class="brand-name">SourceWeb</span></div>
+    <nav id="menus"></nav>
+    <div class="spacer"></div>
+    <select id="projectSelect" title="Open project (Ctrl+Shift+P)"></select>
+    <span id="branchBadge" class="badge" title="Current git branch — click to switch"></span>
+    <button id="themeBtn" class="icon-btn" title="Toggle light/dark">◐</button>
+  </header>
+  <div id="toolbar">
+    <button data-cmd="goBack" title="Go Back (Alt+,)">◀</button>
+    <button data-cmd="goForward" title="Go Forward (Alt+.)">▶</button>
+    <span class="sep"></span>
+    <button data-cmd="openFileDialog" title="Open File (Ctrl+P)">📂</button>
+    <button data-cmd="saveFile" title="Save (Ctrl+S)">💾</button>
+    <span class="sep"></span>
+    <button data-cmd="jumpToDefinition" title="Jump To Definition (Ctrl+=, F12)">⤳ Def</button>
+    <button data-cmd="lookupReferences" title="Lookup References (Ctrl+/)">⇶ Refs</button>
+    <button data-cmd="browseProjectSymbols" title="Browse Project Symbols (F7)">ƒ Symbols</button>
+    <button data-cmd="searchProject" title="Search Project (Ctrl+Shift+F)">🔍 Search</button>
+    <button data-cmd="smartRename" title="Smart Rename (Ctrl+')">✎ Rename</button>
+    <span class="sep"></span>
+    <button data-cmd="toggleBookmark" title="Toggle Bookmark (Ctrl+M)">🔖</button>
+    <button data-cmd="highlightWord" title="Highlight Word (Shift+F8)">🖍</button>
+    <button data-cmd="toggleBlame" title="Toggle git blame annotations">⎇ Blame</button>
+    <span class="spacer"></span>
+    <input id="quickSymbol" placeholder="Symbol / file… (F7 / Ctrl+P)" autocomplete="off" spellcheck="false">
+  </div>
+
+  <main id="workspace">
+    <section id="symbolPane" class="pane" data-pane="symbol">
+      <div class="pane-head"><span>Symbol Window</span><input class="pane-filter" id="symbolFilter" placeholder="filter"></div>
+      <div id="symbolList" class="list"></div>
+    </section>
+    <div class="splitter v" data-resize="symbolPane"></div>
+
+    <section id="center">
+      <div id="tabs"></div>
+      <div id="editorWrap">
+        <div id="editor"></div>
+        <div id="welcome"></div>
+      </div>
+    </section>
+
+    <div class="splitter v" data-resize="projectPane" data-invert="1"></div>
+    <section id="projectPane" class="pane" data-pane="project">
+      <div class="pane-tabs" id="projectTabs">
+        <button data-ptab="files" class="active" title="Project File List">Files</button>
+        <button data-ptab="tree" title="Directory browser">Tree</button>
+        <button data-ptab="psymbols" title="Project Symbol List">Symbols</button>
+        <button data-ptab="git" title="Git: branches, history, changes">Git</button>
+        <button data-ptab="report" title="Project report">Report</button>
+      </div>
+      <div class="pane-head"><input class="pane-filter wide" id="projectFilter" placeholder="Type to filter…" spellcheck="false"></div>
+      <div id="projectBody" class="list"></div>
+    </section>
+  </main>
+
+  <div class="splitter h" data-resize="bottom"></div>
+  <section id="bottom">
+    <div id="contextPane" class="pane">
+      <div class="pane-head">
+        <span>Context Window</span><span id="contextTitle" class="muted ellipsis"></span>
+        <span class="spacer"></span>
+        <button class="mini" id="contextLock" title="Lock context window">🔓</button>
+      </div>
+      <div id="contextEditor"></div>
+    </div>
+    <div class="splitter v" data-resize="contextPane"></div>
+    <div id="lowerRight" class="pane">
+      <div class="pane-tabs" id="lowerTabs">
+        <button data-ltab="relation" class="active">Relation</button>
+        <button data-ltab="results">Search Results <span id="resultsCount" class="count"></span></button>
+        <button data-ltab="bookmarks">Bookmarks</button>
+        <button data-ltab="clip">Clips</button>
+        <button data-ltab="history">History</button>
+        <button data-ltab="findings">Findings</button>
+        <button data-ltab="log">Activity Log</button>
+      </div>
+      <div id="lowerBody">
+        <div data-lpanel="relation" class="lpanel active">
+          <div class="pane-head">
+            <select id="relationMode" title="Relation type">
+              <option value="callers">References (called by)</option>
+              <option value="callees">Calls (calls to)</option>
+              <option value="hierarchy">Class Inheritance</option>
+              <option value="members">Class Structure</option>
+            </select>
+            <select id="relationView" title="View">
+              <option value="outline">Outline</option>
+              <option value="graph">Graph</option>
+            </select>
+            <span id="relationTitle" class="muted ellipsis"></span>
+            <span class="spacer"></span>
+            <button class="mini" id="relationLock" title="Lock relation window">🔓</button>
+            <button class="mini" id="relationRefresh" title="Refresh">⟳</button>
+          </div>
+          <div id="relationBody" class="list tree"></div>
+        </div>
+        <div data-lpanel="results" class="lpanel"><div id="resultsBody" class="list"></div></div>
+        <div data-lpanel="bookmarks" class="lpanel"><div id="bookmarksBody" class="list"></div></div>
+        <div data-lpanel="clip" class="lpanel"><div id="clipBody" class="list"></div></div>
+        <div data-lpanel="history" class="lpanel"><div id="historyBody" class="list"></div></div>
+        <div data-lpanel="findings" class="lpanel"><div id="findingsBody" class="list"></div></div>
+        <div data-lpanel="log" class="lpanel"><div id="logBody" class="list mono"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="statusbar">
+    <span id="stFile"></span><span class="spacer"></span>
+    <span id="stSymbol" class="muted"></span>
+    <span id="stPos"></span><span id="stLang"></span><span id="stIndex"></span>
+  </footer>
+</div>
+
+<div id="overlay" hidden>
+  <div id="palette" role="dialog">
+    <div id="paletteTitle"></div>
+    <input id="paletteInput" autocomplete="off" spellcheck="false">
+    <div id="paletteOpts"></div>
+    <div id="paletteList" class="list"></div>
+    <div id="paletteHint" class="muted"></div>
+  </div>
+</div>
+<div id="menuDrop" hidden></div>
+<div id="toast" hidden></div>
+
+<script src="vendor/monaco/vs/loader.js"></script>
+<script src="app.js"></script>
+<script src="features.js"></script>
+<script src="features2.js"></script>
+<script src="features3.js"></script>
+<script src="features4.js"></script>
+<script src="features5.js"></script>
+<script src="features6.js"></script>
+<script src="features7.js"></script>
+<script src="features8.js"></script>
+<script src="features9.js"></script>
+<script src="features10.js"></script>
+</body>
+</html>
